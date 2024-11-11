@@ -15,7 +15,7 @@
 //. contains exactly two values: one of type `a`; one of type `b`.
 
 import show from 'sanctuary-show';
-import Z from 'sanctuary-type-classes';
+import * as Z from 'sanctuary-type-classes';
 
 export {Pair, pair, fst, snd, swap};
 

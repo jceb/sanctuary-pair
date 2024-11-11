@@ -6,8 +6,8 @@ import jsc from 'jsverify';
 import test from 'oletus';
 import Identity from 'sanctuary-identity';
 import show from 'sanctuary-show';
-import Z from 'sanctuary-type-classes';
-import type from 'sanctuary-type-identifiers';
+import * as Z from 'sanctuary-type-classes';
+import {identifierOf, parseIdentifier} from 'sanctuary-type-identifiers';
 import Useless from 'sanctuary-useless';
 
 import {Pair, pair, fst, snd, swap} from '../index.js';
@@ -41,8 +41,8 @@ test ('metadata', () => {
 });
 
 test ('@@type', () => {
-  eq (type (Pair (0) (0)), 'sanctuary-pair/Pair@1');
-  eq (type.parse (type (Pair (0) (0))),
+  eq (identifierOf (Pair (0) (0)), 'sanctuary-pair/Pair@1');
+  eq (parseIdentifier (identifierOf (Pair (0) (0))),
       {namespace: 'sanctuary-pair', name: 'Pair', version: 1});
 });
 
